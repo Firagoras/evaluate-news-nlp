@@ -1,12 +1,4 @@
-// Set up empty JS object to act as endpoint for all routes
-let projectData = {};
 
-// Base URL for MeaningCloud Sentiment Analysis API
-const baseURL = 'https://api.meaningcloud.com/sentiment-2.1';
-
-
-// Personal API Key for MeaningCloud Sentiment Analysis API
-const apiKey = '?key=9412f417d988d658173c94cdeb016f0c';
 
 // const express = require('express');
 
@@ -14,6 +6,8 @@ import express from 'express';
 
 import fetch from 'node-fetch';
 
+import dotenv from 'dotenv';
+dotenv.config();
 const app = express();
 
 /* --- Dependencies --- */
@@ -32,7 +26,17 @@ app.use(bodyParser.json());
 // Use cors for cross origin allowance
 app.use(cors());
 
-app.use(express.static('dist'))
+app.use(express.static('dist'));
+
+// Set up empty JS object to act as endpoint for all routes
+let projectData = {};
+
+// Base URL for MeaningCloud Sentiment Analysis API
+const baseURL = 'https://api.meaningcloud.com/sentiment-2.1';
+
+
+// Personal API Key for MeaningCloud Sentiment Analysis API
+const apiKey = process.env.API_KEY;
 
 const PORT = '8082';
 // const PORT = '8080';
