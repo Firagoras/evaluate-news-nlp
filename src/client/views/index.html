@@ -4,30 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="/styles/base.scss"> -->
-    <title>Evaluate a News Article with NLP</title>
+    <title>Sentilysis | Evaluate a News Article with NLP</title>
   </head>
   <body>
-    <header>
-      <h1>Article Sentiment Analyser</h1>
-    </header>
-
-    <main>
-      <section>
-        <form action="">
-          <input type="text" id="url" />
-          <input type="button" id="generate" />
-        </form>
-      </section>
-
-      <section>
-        <h2>Sentiment Analysis</h2>
-        <div class="analysisWrapper">
-          
-        </div>
-      </section>
-    </main>
-
-    <footer></footer>
+    <div id="app">
+      <header>
+        <h1>Sentilysis</h1>
+        <p>A tool to evaluate the sentiment of a news article using Natural Language Processing</p>
+      </header>
+      
+      <main>
+        <section id="form">
+          <form action="">
+            <input type="text" id="urlInput" placeholder="Enter a URL"/>
+            <input type="submit" id="analysisBtn" value="Analyse" />
+          </form>
+        </section>
+  
+        <section id="results">
+          <h2 id="resultsHeadline"></h2>
+          <div id="srcUrl"></div>
+          <div id="agreement"></div>
+          <div id="confidence"></div>
+          <div id="irony"></div>
+          <div id="scoreTag"></div>
+          <div id="subjectivity"></div>
+        </section>
+      </main>
+  
+      <footer>
+        <p>2022 &copy;Sentilysis NLP Analysis provided by &copy;MeaningCloud</p>
+      </footer>
+    </div>
   </body>
 </html>

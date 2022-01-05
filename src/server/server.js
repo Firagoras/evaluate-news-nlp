@@ -71,7 +71,7 @@ function postData(req, res) {
       agreement: apiData.agreement,
       confidence: apiData.confidence,
       irony: apiData.irony,
-      score_tag: apiData.score_tag,
+      scoreTag: apiData.score_tag,
       subjectivity: apiData.subjectivity,
       srcUrl: srcUrl
     };
