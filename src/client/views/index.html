@@ -15,9 +15,9 @@
       
       <main>
         <section id="form">
-          <form action="">
-            <input type="text" id="urlInput" placeholder="Enter a URL"/>
-            <input type="submit" id="analysisBtn" value="Analyse" />
+          <form novalidate>
+            <input type="text" id="urlInput" placeholder="http(s)://www.example.com" pattern="https?://.+" title="The URL must start with http(s)://" required/>
+            <input type="submit" id="analyseBtn" value="Analyse" />
           </form>
         </section>
   

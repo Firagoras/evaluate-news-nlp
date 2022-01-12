@@ -15,7 +15,11 @@
   outline: none;
 }
 
-#analysisBtn {
+#urlInput.invalid {
+  border: 2px solid red;
+}
+
+#analyseBtn {
   height: 2em;
   background: #e3e3e3;
   color: #333;

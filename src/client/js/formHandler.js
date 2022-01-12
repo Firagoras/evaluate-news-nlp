@@ -1,13 +1,19 @@
-import { updateUI } from './updateUI.js';
+import { validateInput, resetMode, setAlertMode } from './formValidator.js';
+
+// A function to update the user UI with data received from API
+
+function updateUI(apiData) {
+  document.getElementById('resultsHeadline').innerHTML = '<h2>Last Analysis Results</h2>'
+  document.getElementById('srcUrl').innerHTML = `Source: <a href="${apiData.srcUrl}" target="_blank">${apiData.srcUrl}</a>`;
+  document.getElementById('agreement').innerHTML = `Agreement: ${apiData.agreement}`;
+  document.getElementById('confidence').innerHTML = `Confidence: ${apiData.confidence}`;
+  document.getElementById('irony').innerHTML = `Irony: ${apiData.irony}`;
+  document.getElementById('scoreTag').innerHTML = `Score Tag: ${apiData.scoreTag}`;
+  document.getElementById('subjectivity').innerHTML = `Subjectivity: ${apiData.subjectivity}`;
+}
 
 // Asynchronous function to make a POST request to the server
-const postData = async (e) => {
-  e.preventDefault();
-  const srcUrl = document.getElementById('urlInput');
-  const data = {
-    "textUrl": srcUrl.value
-  };
-
+const postData = async (data) => {
   const response = await fetch('/postData', {
     method: 'POST',
     credentials: 'same-origin',
@@ -26,4 +32,20 @@ const postData = async (e) => {
   }
 }
 
-export { postData };
+// Function to handle the form submition event. It mainly validates input, set relevant mode accordingly and then process the request when input is valid
+function handleSubmit(e) {
+  e.preventDefault();
+  const urlInput = document.getElementById('urlInput');
+  const data = {
+    "textUrl": urlInput.value
+  };
+  // Check if URL input is valid
+  if (validateInput(urlInput)) {
+    resetMode(urlInput);
+    postData(data);
+  } else {
+    setAlertMode(urlInput);
+  }
+}
+
+export { handleSubmit };
