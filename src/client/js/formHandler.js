@@ -1,6 +1,6 @@
 import { validateInput, resetMode, setAlertMode } from './formValidator.js';
 
-// A function to update the user UI with data received from API
+// Function to update the user interface with data received from API
 
 function updateUI(apiData) {
   document.getElementById('resultsHeadline').innerHTML = '<h2>Last Analysis Results</h2>'
@@ -32,7 +32,7 @@ const postData = async (data) => {
   }
 }
 
-// Function to handle the form submition event. It mainly validates input, set relevant mode accordingly and then process the request when input is valid
+// Function to handle the form submit event. It mainly validates input, set relevant mode and then process the request when valid input
 function handleSubmit(e) {
   e.preventDefault();
   const urlInput = document.getElementById('urlInput');

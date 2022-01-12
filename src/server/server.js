@@ -1,23 +1,17 @@
-
-
-// const express = require('express');
-
 import express from 'express';
 
 import fetch from 'node-fetch';
 
 import dotenv from 'dotenv';
 dotenv.config();
+
 const app = express();
 
 /* --- Dependencies --- */
+
 // Middleware
-// const bodyParser = require('body-parser');
 import bodyParser from 'body-parser';
-// const cors = require('cors');
 import cors from 'cors';
-// const read = require('body-parser/lib/read');
-// import read from 'body-parser/lib/read';
 
 // Configure express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -39,7 +33,6 @@ const baseURL = 'https://api.meaningcloud.com/sentiment-2.1';
 const apiKey = process.env.API_KEY;
 
 const PORT = '8082';
-// const PORT = '8080';
 
 app.listen(PORT, listening);
 
@@ -49,10 +42,10 @@ function listening() {
 
 app.get('/', (req, res) => res.sendFile('dist/index.html'));
 
-// Set up a POST route with two arguments: a route name and a callback function
+// Set up a POST route
 app.post('/postData', postData);
 
-// Function to update the app endpoint in the server side using the data received from the api.
+// Function to handle a post request from the client side and update the app endpoint with the data received from the api.
 function postData(req, res) {
   const srcUrl = req.body.textUrl;
   const apiUrl = baseURL+apiKey+'&of=json&url='+srcUrl+'&lang=en';

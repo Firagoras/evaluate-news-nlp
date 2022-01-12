@@ -1,14 +1,14 @@
-// Helper function to show a red border around an input with invalid input
+// Function to show a red border around an invalid input
 function showRedBorder(input) {
   input.classList.add('invalid');
 }
 
-// Helper function to hide a red border around an input with valid input
+// Function to hide a red border around a valid input
 function hideRedBorder(input) {
   input.classList.remove('invalid');
 }
 
-// Helper boolean function to check whether an input meets its validation constraints as defined in the html pattern attribute
+// Function to check whether an input meets validation constraints as defined in the html file
 function validateInput(input) {
   if (input.validity.valueMissing) {
     input.setCustomValidity('This field is required');
@@ -25,19 +25,19 @@ function validateInput(input) {
   }
 }
 
-// Helper function to handle the input event 
+// Function to perform as an event listener
 function inputListener(e) {
   validateInput(e.currentTarget);
 }
 
-// Helper function to set alert mode with 2-step validation: Draw a red border around the input and display a custom message to the user
+// Function to set alert mode allowing validation on input change
 function setAlertMode(input) {
   showRedBorder(input);
   input.reportValidity();
   input.addEventListener('input', inputListener);
 }
 
-// Helper function to quit the alert mode and reset default mode with 1-step validation occurs only on a button click with no red border
+// Function to reset mode to default with validation on form submit
 function resetMode(input) {
   hideRedBorder(input);
   input.removeEventListener('input', inputListener);
