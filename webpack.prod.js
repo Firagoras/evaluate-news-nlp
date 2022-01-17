@@ -1,6 +1,7 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import WorkboxPlugin from 'workbox-webpack-plugin';
 
 export default {
   entry: './src/client/index.js',
@@ -28,7 +29,8 @@ export default {
       template: "./src/client/views/index.html",
       filename: "./index.html",
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new WorkboxPlugin.GenerateSW()
   ],
   optimization: {
     minimize: true,
