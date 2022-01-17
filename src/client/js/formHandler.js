@@ -48,4 +48,4 @@ function handleSubmit(e) {
   }
 }
 
-export { handleSubmit };
+export { handleSubmit, postData };
