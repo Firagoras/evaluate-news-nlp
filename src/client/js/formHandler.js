@@ -1,15 +1,22 @@
 import { validateInput, resetMode, setAlertMode } from './formValidator.js';
+import { decodePolarity } from './polarityDecoder.js';
 
 // Function to update the user interface with data received from API
 
 function updateUI(apiData) {
-  document.getElementById('resultsHeadline').innerHTML = '<h2>Last Analysis Results</h2>'
-  document.getElementById('srcUrl').innerHTML = `Source: <a href="${apiData.srcUrl}" target="_blank">${apiData.srcUrl}</a>`;
-  document.getElementById('agreement').innerHTML = `Agreement: ${apiData.agreement}`;
-  document.getElementById('confidence').innerHTML = `Confidence: ${apiData.confidence}`;
-  document.getElementById('irony').innerHTML = `Irony: ${apiData.irony}`;
-  document.getElementById('scoreTag').innerHTML = `Score Tag: ${apiData.scoreTag}`;
-  document.getElementById('subjectivity').innerHTML = `Subjectivity: ${apiData.subjectivity}`;
+  document.getElementById('resultsHeadline').innerHTML = '<h2>Last Analysis Results</h2>';
+
+  document.getElementById('srcUrl').innerHTML = `<span class='label'>Source: </span><a href="${apiData.srcUrl}" target="_blank">${apiData.srcUrl}</a>`;
+
+  document.getElementById('scoreTag').innerHTML = `<span class='label'>Polarity: </span><span class='data'>${decodePolarity(apiData.scoreTag)}</span> `;
+
+  document.getElementById('agreement').innerHTML = `<span class='label'>Agreement: </span><span class='data'>${apiData.agreement.toLowerCase()}</span>`;
+
+  document.getElementById('confidence').innerHTML = `<span class='label'>Confidence: </span><span class='data'>${apiData.confidence.toLowerCase()}</span>`;
+  
+  document.getElementById('subjectivity').innerHTML = `<span class='label'>Subjectivity: </span><span class='data'>${apiData.subjectivity.toLowerCase()}</span>`;
+  
+  document.getElementById('irony').innerHTML = `<span class='label'>Irony: </span><span class='data'>${apiData.irony.toLowerCase()}</span>`;
 }
 
 // Asynchronous function to make a POST request to the server
