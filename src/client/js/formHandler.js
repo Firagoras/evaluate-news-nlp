@@ -21,7 +21,7 @@ function updateUI(apiData) {
 
 // Asynchronous function to make a POST request to the server
 const postData = async (data) => {
-  const response = await fetch('/postData', {
+  const response = await fetch('http://localhost:8082/postData', {
     method: 'POST',
     credentials: 'same-origin',
     headers: {

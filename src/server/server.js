@@ -60,7 +60,6 @@ function postData(req, res) {
   fetchApiData(apiUrl, requestOptions)
   // Once the API data is successfully received, store selected data into the app endpoint 
   .then(apiData => {
-    console.log(apiData);
     projectData = {
       agreement: apiData.agreement,
       confidence: apiData.confidence,
