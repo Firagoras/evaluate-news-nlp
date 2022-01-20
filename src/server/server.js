@@ -29,7 +29,7 @@ let projectData = {};
 /* --- API Setup --- */
 
 // Base URL for MeaningCloud Sentiment Analysis API
-const baseURL = 'https://api.meaningcloud.com/sentiment-2.1';
+const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?key=';
 
 // Personal Key for MeaningCloud Sentiment Analysis API
 const apiKey = process.env.API_KEY;
