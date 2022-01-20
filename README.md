@@ -1,25 +1,99 @@
-# Evaluate a news article with Natural Language Processing
+# Evaluate a text with Natural Language Processing
 
-## Overview
+## About the Project
 
-This project is a web app that evaluates a news article with Natural Language Processing through a Web API (MeaningCloud Sentiment Analysis API).
+This is the 4th project of [Udacity Front End Web Developer Nanodegree program](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011).
 
-## Development
+The project aims to build a web tool that uses a Natural Language Processing (NLP) techniques to perform sentiment analysis of a text from different sources on the internet. The analysis is provided by [MeaningCloud](https://learn.meaningcloud.com/developer/sentiment-analysis/2.1/doc/what-is-sentiment-analysis).
 
-The project is created using NodeJS which is an asynchronous event-driven JavaScript runtime, and ExpressJS which is a minimal Nodejs web application framework. Vanilla JavaScript is used in the app front end.
+### Analysis Scope
 
-## Purpose
+The analysis performed on the text identifies the following sentiments:
 
-The app is the fourth project of Udacity's Front-End Web Developer Nanodegree. The project was created to meet specific requirements set by Udacity.
+- Polarity: Indicates the global polarity of the text
+- Agreement: Marks the agreement between the sentiments detected in the text
+- Confidence: Represents the confidence associated with the sentiment analysis performed on the text
+- Subjectivity: Marks the subjectivity of the text
+- Irony: Indicates the irony of the text.
 
-## Specification
+### Built with
 
-- Analyse a news article with Natural Language Processing.
-- Store a copy of the received weather data on the app backend.
-- Update the User Interface dynamically to log the latest call data.
-- Apply simple input validation and return an error to alert the user when
-- Validate the form input using regex and return an error to alert the user
+- Front-end: HTML, SASS and JavaScript
+- Back-end: Node and ExpressJS
+- Build tool: Webpack
+- PWA: Workbox
+- Testing: Jest
 
-## Instructions
+### Functionality
 
-Please just provide the URL of an article and click "Analyse" button.
+- Call an api from the server-side on form submission
+- Update the User Interface dynamically to log the latest information from the api response
+- Implement an offline functionality using Workbox
+- Apply unit tests using Jest
+- Apply simple form validation and return an error to alert the user when the input is empty or the provided URL is not valid.
+
+## Getting Started
+
+### Prerequisites
+
+Make sure Node and NPM are installed on your computer. Otherwise, install both.
+
+1. Node: Binaries, installers, and source tarballs are available at <https://nodejs.org/en/download/>.
+
+2. NPM: From the terminal
+   ```sh
+   npm install npm -g
+   ```
+
+### Installation
+
+1. Get a free API Key at [MeaningCloud](https://www.meaningcloud.com/)
+
+2. Clone the project repo
+
+   ```sh
+   git clone https://github.com/firagoras/evaluate-news-nlp.git
+   ```
+
+3. Install NPM packages
+
+   ```sh
+   npm install
+   ```
+
+4. Configure environment variables using dotenv package
+
+- Create a new `.env` file in the root of your project
+
+- Fill the `.env` file with your API key like this:
+  ```js
+  const API_KEY = 'ENTER YOUR API';
+  ```
+
+5. Start the project front-end
+
+- Run on development mode
+  ```sh
+  npm run build-dev
+  ```
+- Run on production mode
+  ```sh
+  npm run build-prod
+  ```
+
+6. Run the server
+
+   ```sh
+   npm run start
+   ```
+
+### Testing
+
+- Unit test
+  ```sh
+  npm run test
+  ```
+
+## Usage
+
+Submit the URL of a text and click "Analyse", the page displays the analysis results as returned form the MeaningCloud Sentiment Analysis API
