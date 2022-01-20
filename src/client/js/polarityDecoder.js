@@ -1,4 +1,4 @@
-// Function to decode the score_tag of a text into a meaningful polarity term
+// Function to decode the score_tag returned form the api into a meaningful polarity term
 function decodePolarity (scoreTag) {
   switch (scoreTag) {
     case 'P+':

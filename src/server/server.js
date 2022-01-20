@@ -20,17 +20,21 @@ app.use(bodyParser.json());
 // Use cors for cross origin allowance
 app.use(cors());
 
+// Initialize the main project folder
 app.use(express.static('dist'));
 
 // Set up empty JS object to act as endpoint for all routes
 let projectData = {};
 
+/* --- API Setup --- */
+
 // Base URL for MeaningCloud Sentiment Analysis API
 const baseURL = 'https://api.meaningcloud.com/sentiment-2.1';
 
-
 // Personal Key for MeaningCloud Sentiment Analysis API
 const apiKey = process.env.API_KEY;
+
+/* --- Server Setup --- */
 
 const PORT = '8082';
 
@@ -40,10 +44,15 @@ function listening() {
   console.log('Server is running on localhost', PORT);
 }
 
+/* --- Routes Setup --- */
+
+// Set up a get route
 app.get('/', (req, res) => res.sendFile('dist/index.html'));
 
 // Set up a POST route
 app.post('/postData', postData);
+
+/* --- Main Functions --- */
 
 // Function to handle a post request from the client side and update the app endpoint with the data received from the api.
 function postData(req, res) {
@@ -56,9 +65,9 @@ function postData(req, res) {
     redirect: 'follow'
   };
 
-  // a function call to fetch API data 
+  // Function call to fetch api data 
   fetchApiData(apiUrl, requestOptions)
-  // Once the API data is successfully received, store selected data into the app endpoint 
+  // Once the api data is successfully received, store selected data into the app endpoint 
   .then(apiData => {
     projectData = {
       agreement: apiData.agreement,
@@ -69,12 +78,13 @@ function postData(req, res) {
       srcUrl: srcUrl
     };
   })
+  // Once api data are stored, send it to the front-end
   .then(() => {
     res.send(projectData);
   });
 }
 
-// Asynchronous function to get API data
+// Asynchronous function to get data from MeaningCloud Sentiment Analysis API
 const fetchApiData = async (url, options) => {
   const response = await fetch(url, options);
 
