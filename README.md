@@ -2,9 +2,9 @@
 
 ## About the Project
 
-This is the 4th project of [Udacity Front End Web Developer Nanodegree program](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011).
+This is the 4th project of the [Udacity Front End Web Developer Nanodegree program](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011).
 
-The project aims to build a web tool that uses a Natural Language Processing (NLP) techniques to perform sentiment analysis of a text from different sources on the internet. The analysis is provided by [MeaningCloud](https://learn.meaningcloud.com/developer/sentiment-analysis/2.1/doc/what-is-sentiment-analysis).
+The project aims to build a web tool that uses Natural Language Processing (NLP) techniques to perform sentiment analysis of a text from different sources on the internet. The analysis is provided by [MeaningCloud](https://learn.meaningcloud.com/developer/sentiment-analysis/2.1/doc/what-is-sentiment-analysis).
 
 ### Analysis Scope
 
