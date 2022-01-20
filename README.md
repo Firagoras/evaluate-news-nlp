@@ -45,6 +45,34 @@ Make sure Node and NPM are installed on your computer. Otherwise, install both.
    npm install npm -g
    ```
 
+### Dependencies
+
+#### Development Dependencies
+
+- @babel/core: "7.16.0"
+- @babel/preset-env: "7.16.4",
+- babel-loader: "8.2.3",
+- css-loader: "6.5.1",
+- css-minimizer-webpack-plugin: "3.2.0",
+- html-webpack-plugin: "5.5.0",
+- jest: "27.4.7",
+- mini-css-extract-plugin: "2.4.5",
+- node-sass: "7.0.0",
+- sass-loader: "12.4.0",
+- style-loader: "3.3.1",
+- webpack: "5.65.0",
+- webpack-cli: "4.9.1",
+- webpack-dev-server: "4.6.0",
+- workbox-webpack-plugin: "6.4.2"
+
+#### Production Dependencies
+
+- body-parser: "1.19.1",
+- cors: "2.8.5",
+- dotenv: "10.0.0",
+- express: "4.17.1",
+- node-fetch: "3.1.0"
+
 ### Installation
 
 1. Get a free API Key at [MeaningCloud](https://www.meaningcloud.com/)
@@ -63,23 +91,23 @@ Make sure Node and NPM are installed on your computer. Otherwise, install both.
 
 4. Configure environment variables using dotenv package
 
-- Create a new `.env` file in the root of your project
+   - Create a new `.env` file in the root of your project
 
-- Fill the `.env` file with your API key like this:
-  ```js
-  const API_KEY = 'ENTER YOUR API';
-  ```
+   - Fill the `.env` file with your API key like this:
+     ```js
+     const API_KEY = 'ENTER YOUR API';
+     ```
 
 5. Start the project front-end
 
-- Run on development mode
-  ```sh
-  npm run build-dev
-  ```
-- Run on production mode
-  ```sh
-  npm run build-prod
-  ```
+   - Run on development mode
+     ```sh
+     npm run build-dev
+     ```
+   - Run on production mode
+     ```sh
+     npm run build-prod
+     ```
 
 6. Run the server
 
