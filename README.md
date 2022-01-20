@@ -1,4 +1,4 @@
-# Evaluate a text with Natural Language Processing
+# Evaluate an Article with Natural Language Processing
 
 ## About the Project
 
@@ -87,13 +87,13 @@ Make sure Node and NPM are installed on your computer. Otherwise, install both.
    npm run start
    ```
 
-### Testing
+## Usage
+
+Submit the URL of a text and click "Analyse", the page displays the analysis results as returned form the MeaningCloud Sentiment Analysis API
+
+## Testing
 
 - Unit test
   ```sh
   npm run test
   ```
-
-## Usage
-
-Submit the URL of a text and click "Analyse", the page displays the analysis results as returned form the MeaningCloud Sentiment Analysis API
