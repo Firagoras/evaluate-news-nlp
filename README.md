@@ -94,8 +94,8 @@ Make sure Node and NPM are installed on your computer. Otherwise, install both.
    - Create a new `.env` file in the root of your project
 
    - Fill the `.env` file with your API key like this:
-     ```js
-     const API_KEY = 'ENTER YOUR API';
+     ```
+     API_KEY = 'ENTER YOUR API'
      ```
 
 5. Start the project front-end
